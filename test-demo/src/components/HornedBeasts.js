@@ -35,7 +35,7 @@ class HornedBeasts extends React.Component {
 
               return (
 
-                <div>
+                <div id = "div">
 
                   <Col>
                     <Card style={{ width: '18rem' , height:'35rem'}}>
