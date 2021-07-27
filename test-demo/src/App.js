@@ -1,75 +1,56 @@
 
 import React from 'react';
 import './App.css';
-import Main from './components/Main';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
-import Beasts from './components/assest/HornedBeasts.json';
-import SelectedBeast from './components/SelectedBeast';
+import Header from './Component/Header';
+import Main from './Component/Main';
+import Footer from './Component/Footer';
+import Beasts from './Component/assest/Beasts.json';
+import SelectedBeast from './Component/SelectedBeast';
 
 
-class App extends React.Component {
-  constructor(props) {
+class App extends React.Component{
+  constructor(props){
     super(props);
     this.state = {
-      show: false,
-      title: null,
-      url: null,
-      description: null,
+
+      modalState: false,
     };
   }
 
-  modalData = (title, url, desc) => {
+
+  modalHandler = (title, imageUrl, description, modalState) => {
     this.setState({
       title: title,
-      url: url,
-      description: desc,
+      imageUrl: imageUrl,
+      description: description,
+      modalState: modalState,
     });
   };
 
-  stateHandleShow = () => {
+  handelModalShow = modalState =>{
     this.setState({
-      show: true,
+      modalState: modalState
     });
-  };
-  stateHandleHide = () => {
-    this.setState({
-      show: false,
-    });
-  };
+  }
 
-  render() {
-    return (
-      <Container fluid align="center">
-        <div>
-          <Col>
-            <Header />
-          </Col>
-          <Row>
-            <SelectedBeast
-              show={this.state.show}
-              hide={this.stateHandleHide}
-              title={this.state.title}
-              url={this.state.url}
-              desc={this.state.description}
-            />
 
-            <Main
-              data={Beasts}
-              stateUpdate={this.stateHandleShow}
-              modalData={this.modalData}
-            />
-          </Row>
-          <Col>
-            <Footer />
-          </Col>
-        </div>
-      </Container>
+  render(){
+    return(
+      <>
+        <SelectedBeast
+          title={this.state.title}
+          imageUrl={this.state.imageUrl}
+          description={this.state.description}
+          showModal={this.state.modalState}
+          hideModal={this.handelModalShow}
+
+        />
+        <Header />
+        <Main
+          beastList={Beasts}
+          modalHandler={this.modalHandler}/>
+        <Footer />
+      </>
     );
   }
 }
