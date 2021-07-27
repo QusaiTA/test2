@@ -1,7 +1,10 @@
 import React from 'react';
 
 import HornedBeasts from './HornedBeasts';
-import Beasts from './assest/HornedBeasts.json';
+// import Beasts from './assest/HornedBeasts.json';
+import Row from 'react-bootstrap/Row';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class Main extends React.Component {
 
@@ -12,12 +15,21 @@ class Main extends React.Component {
     return (
       <main>
 
+        <Row xs={1} md={3} className="g-4">
 
-        {
-          Beasts.map((elements) =>{
-            return <HornedBeasts title= {elements.title} imgUrl={elements.image_url} description={elements.description} />;
-          })
-        }
+          {
+
+
+            this.props.data.map((elements) =>{
+              return <HornedBeasts title= {elements.title}
+                imgUrl={elements.image_url}
+                description={elements.description}
+                showModal={this.props.stateUpdate}
+                modalData={this.props.modalData}/>;
+            })
+          }
+        </Row>
+
 
 
       </main>
