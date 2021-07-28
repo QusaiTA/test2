@@ -10,7 +10,7 @@ class Main extends React.Component{
   constructor(props){
     super (props);
     this.state = {
-      filterValue : -1,
+      filterValue : -5,
     };
   }
 
@@ -32,7 +32,7 @@ class Main extends React.Component{
             <Row xs={1} md={3} className='justify-content-center'>
               {
                 this.props.beastList.filter(element =>
-                  this.state.filterValue === -1
+                  this.state.filterValue === -5
                     ? true
                     : element.horns === this.state.filterValue).map(element => {
                   return <HornedBeasts

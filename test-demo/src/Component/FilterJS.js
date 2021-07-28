@@ -26,7 +26,7 @@ class FilterJS extends React.Component{
                className='w-50 justify-self-center'
              >
 
-               <option value='-1'>All</option>
+               <option value='-5'>All</option>
                <option value="1">One</option>
                <option value="2">Two</option>
                <option value="3">Three</option>
