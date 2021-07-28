@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class Filter extends React.Component{
-   getThesubmittedData = (event) => {
+   dataSubmited = (event) => {
      event.preventDefault();
      this.props.filterData(parseInt(event.target.value));
    }
@@ -21,7 +21,7 @@ class Filter extends React.Component{
              <Form.Label className='w-25  align-self-center text-md-end mx-md-3'>How Many Horns?</Form.Label>
              <Form.Select
                aria-label="Default select example"
-               onChange={this.getThesubmittedData}
+               onChange={this.dataSubmited}
                name="filter"
                className='w-50 justify-self-center'
              >
