@@ -1,33 +1,43 @@
-// import React from 'react';
-// import Form from 'react-bootstrap/Form';
+import React from 'react';
+import Form from 'react-bootstrap/Form';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-// class Filter extends React.Component{
-//    getThesubmittedData = (event) => {
-//      event.preventDefault();
-//      let gittedData = event.target.Select.value;
-//      this.props.submittedData(gittedData);
-//    }
 
-//    render(){
+class Filter extends React.Component{
+   getThesubmittedData = (event) => {
+     event.preventDefault();
+     this.props.filterData(parseInt(event.target.value));
+   }
+
+   render(){
 
 
-//      return (
+     return (
 
-//        <div>
-//          <Form onSubmit ={this.getThesubmittedData}>
-//            <Form.Select aria-label="Default select example">
-//              <option>Open this select menu</option>
-//              <option value="1">One</option>
-//              <option value="2">Two</option>
-//              <option value="3">Three</option>
-//              <option value="4">Whee!</option>
+       <div>
+         <Form>
+           <Form.Group className='mb-3 d-flex'>
+             <Form.Label className='w-25  align-self-center text-md-end mx-md-3'>How Many Horns?</Form.Label>
+             <Form.Select
+               aria-label="Default select example"
+               onChange={this.getThesubmittedData}
+               name="filter"
+               className='w-50 justify-self-center'
+             >
 
-//            </Form.Select>
-//          </Form>
-//        </div>
-//      );
+               <option value='-1'>All</option>
+               <option value="1">One</option>
+               <option value="2">Two</option>
+               <option value="3">Three</option>
+               <option value="100">Wow</option>
 
-//    }}
+             </Form.Select>
+           </Form.Group>
+         </Form>
+       </div>
+     );
 
-// export default Filter;
+   }}
+
+export default Filter;
