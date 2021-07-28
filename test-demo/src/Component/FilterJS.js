@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-class Filter extends React.Component{
+class FilterJS extends React.Component{
    dataSubmited = (event) => {
      event.preventDefault();
      this.props.filterData(parseInt(event.target.value));
@@ -26,7 +26,7 @@ class Filter extends React.Component{
                className='w-50 justify-self-center'
              >
 
-               <option value='-1'>All</option>
+               <option value='-5'>All</option>
                <option value="1">One</option>
                <option value="2">Two</option>
                <option value="3">Three</option>
@@ -38,6 +38,7 @@ class Filter extends React.Component{
        </div>
      );
 
-   }}
+   }
+}
 
-export default Filter;
+export default FilterJS;
