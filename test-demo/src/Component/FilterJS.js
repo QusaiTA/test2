@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-class Filter extends React.Component{
+class FilterJS extends React.Component{
    dataSubmited = (event) => {
      event.preventDefault();
      this.props.filterData(parseInt(event.target.value));
@@ -38,6 +38,7 @@ class Filter extends React.Component{
        </div>
      );
 
-   }}
+   }
+}
 
-export default Filter;
+export default FilterJS;
