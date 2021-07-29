@@ -16,23 +16,18 @@ class FilterJS extends React.Component{
      return (
 
        <div>
-         <Form>
-           <Form.Group className='mb-3 d-flex'>
-             <Form.Label className='w-25  align-self-center text-md-end mx-md-3'>How Many Horns?</Form.Label>
-             <Form.Select
-               aria-label="Default select example"
-               onChange={this.dataSubmited}
-               name="filter"
-               className='w-50 justify-self-center'
-             >
 
+         <Form className='selectForm'>
+           <Form.Group controlId="exampleForm.SelectCustom">
+             <Form.Label>Number Of Horns</Form.Label>
+             <Form.Control as="select" custom onChange={this.dataSubmited}>
                <option value='-5'>All</option>
                <option value="1">One</option>
                <option value="2">Two</option>
                <option value="3">Three</option>
                <option value="100">Wow</option>
 
-             </Form.Select>
+             </Form.Control>
            </Form.Group>
          </Form>
        </div>
